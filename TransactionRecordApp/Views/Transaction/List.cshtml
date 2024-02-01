@@ -1,0 +1,31 @@
+﻿@model List<Transaction>
+
+@{
+    ViewData["Title"] = "All Transactions";
+}
+
+<h2>All Transactions</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ticker Symbol</th>
+            <th>Company Name</th>
+            <th>Quantity</th>
+            <th>Share Price</th>
+            <th>Gross Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.TickerSymbol</td>
+                <td>@transaction.CompanyName</td>
+                <td>@transaction.Quantity</td>
+                <td>@transaction.SharePrice</td>
+                <td>@transaction.GrossValue</td>
+            </tr>
+        }
+    </tbody>
+</table>
